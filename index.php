@@ -14,9 +14,7 @@ echo $str1 . $str2;
 // 3. Извлеките символы "w" и "o" из строки "Hello World!".
 
 $str = 'Hello World';
-$letterW = 'w';
-$letterO = 'o';
-$str = str_replace([$letterW, $letterO], '', $str);
+$str = str_replace(['w', 'o'], '', $str);
 echo $str;
 
 
