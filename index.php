@@ -38,9 +38,7 @@ echo find($str, $subStr);
 // 5. Замените все вхождения подстроки "world" на "everyone" в строке "Hello world!".
 
 $str = 'Hello world!';
-$subStr = 'world';
-$subStrToReplaсe = 'everyone';
-$str = str_replace([$subStr], [$subStrToReplaсe], $str);
+$str = str_replace('world', 'everyone', $str);
 echo $str;
 
 
