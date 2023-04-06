@@ -139,3 +139,40 @@ echo $check;
 
 
 
+
+//1. Создание функции-счетчика (без использования static). Каждый вызов функции +1 к исходному результату от начального значения функции. Использовать только замыкание и начальное значение переменной.
+
+function counter() {
+
+    $counter = 0;
+
+    return function() use (&$counter) {
+        return $counter++;
+    };
+}
+
+$result = counter();
+echo $result();
+echo $result();
+echo $result();
+
+
+
+
+//2. Создать замыкание для генератора случайных чисел в заданном диапазоне в передаваемых аргументах ($min, $max).
+
+
+
+
+function getRandomNumber() {
+    $firstNum = 10;
+    $secondNum = 100;
+
+    return function() use ($firstNum, $secondNum) {
+        return rand($firstNum, $secondNum);
+
+    };
+}
+
+$result = getRandomNumber();
+echo $result();
